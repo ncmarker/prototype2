@@ -10,13 +10,12 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform minSpawn;
     public Transform maxSpawn; 
-    // Start is called before the first frame update
+
     void Start()
     {
         spawnTime = spawnTimer;
     }
 
-    // Update is called once per frame
     void Update()
     {
         spawnTime -= Time.deltaTime;
