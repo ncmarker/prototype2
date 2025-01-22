@@ -6,6 +6,7 @@ public class BulletPower : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float shootInterval = 0.5f;
     [SerializeField] private float bulletSpeed = 10f;
+    [SerializeField] private AudioSource laserShotSource;
 
     private bool isActive = false;
 
@@ -39,6 +40,7 @@ public class BulletPower : MonoBehaviour
             // Shoot bullets from the left and right of the player
             ShootBullet(Vector3.left); 
             ShootBullet(Vector3.right); 
+            laserShotSource.Play();
 
             yield return new WaitForSeconds(shootInterval);
         }

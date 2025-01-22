@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool isPlayer2 = false;
     private float screenWidth;
     private float screenHeight;
+    public AudioSource backgroundMusicSource;
 
     private void Awake()
     {
@@ -24,6 +25,12 @@ public class PlayerController : MonoBehaviour
         // Getting the screen bounds
         screenWidth = Camera.main.orthographicSize * Camera.main.aspect;
         screenHeight = Camera.main.orthographicSize;
+
+        // play background music 
+        if (backgroundMusicSource != null) {
+            backgroundMusicSource.loop = true;
+            backgroundMusicSource.Play();
+        }
     }
 
     // Update is called once per frame
